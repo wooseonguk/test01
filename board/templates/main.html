@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>방구석 한국여행</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="{% static "js/skel.min.js" %}"></script>
+		<script src="{% static "js/skel-panels.min.js" %}"></script>	
+		<script src="{% static "js/init.js" %}"></script>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/style-desktop.css' %}" />
+
+		<style>
+			#nav a:hover{
+				color:white;
+				background-color: #3CB371;
+				border-radius: 5px;	
+			}
+			#nav a{
+				font-size: 20px;
+				font-weight: bold;
+			}
+			#button{
+				background-color: #BDECB6;
+			}
+			#button:hover{
+				background-color: #3CB371;
+			}
+			.image { 
+				position:relative;
+				text-align:center;
+			}
+			.image div { 
+				position: absolute;
+				top:2%;
+				left:55%;
+				transform: translate(-50%, -50%); 
+				
+				}
+			#logo a{
+				display: flex;
+				margin-top: 60%;
+			}
+			#nav ul li a{
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body class="homepage">
+		
+	<!-- Banner -->
+		<div class="image">
+		<img src="{% static "images/banner01.jpg" %}" "style:width="700px"; height="1008px"; ">
+		<div class="container">
+					
+				<!-- Logo -->
+					<span id="logo">
+						<a href="" style="color:#666362; text-decoration: none;"><p style="color: red; -webkit-transform:rotate(15deg);">방</p>
+						<strong style="color:#666362; -webkit-transform:rotate(0deg);">구석</strong><strong style="color: blue; padding-left: 20px; -webkit-transform:rotate(10deg);">한</strong>국여행</a>
+					</span>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="dataMain">데이터 보러가기</a></li>
+							<li><a href="japTags">해시태그</a></li>
+							<li><a href="/main/kotravel/tourinfo">관광정보</a></li>
+							<li><a href="translator">번역기</a></li>
+						</ul>
+					</nav>
+
+			</div>
+			
+		</div>
+	<!-- /Banner -->
+
+	<!-- Main -->
+		<div id="page">
+
+			<!-- Extra -->
+			<div id="marketing" class="container">
+				<div class="row">
+					<div class="3u">
+						<section>
+							<header>
+								<h2 style="font-size: 22px; font-weight: bold;">관광</h2>
+							</header>
+							<p class="subtitle">観光</p>
+							<p><a href="kotravel/tourinfo"><img src="{% static "images/m_travel.jpg" %}" alt="" "style:width="200px"; height="200px"; "></a></p>
+							<a href="kotravel/tourinfo" id="button" class="button">More</a>
+						</section>
+					</div>
+					<div class="3u">
+						<section>
+							<header>
+								<h2 style="font-size: 22px; font-weight: bold;">카페</h2>
+							</header>
+							<p class="subtitle">韓國カフェ</p>
+							<p><a href="japTags/kocafe/cafeinfo"><img src="{% static "images/m_cafe.jpg" %}" alt="" "style:width="200px"; height="200px"; "></a></p>
+							<a href="japTags/kocafe/cafeinfo" id="button" class="button">More</a>
+						</section>
+					</div>
+					<div class="3u">
+						<section>
+							<header>
+								<h2 style="font-size: 22px; font-weight: bold;">패션</h2>
+							</header>
+							<p class="subtitle">韓國情報</p>
+							<p><a href="japTags/kofashiontags/ftag1"><img src="{% static "images/m_fashion.jpg" %}" alt="" "style:width="200px"; height="200px"; "></a></p>
+							<a href="japTags/kofashiontags/ftag1" id="button" class="button">More</a>
+						</section>
+					</div>
+					<div class="3u">
+						<section>
+							<header>
+								<h2 style="font-size: 22px; font-weight: bold;">화장품</h2>
+							</header>
+							<p class="subtitle">韓國コスメ</p>
+							<p><a href="japTags/kocosmetictags/cosmetic"><img src="{% static "images/m_cosmetic.jpg" %}" alt="" "style:width="200px"; height="200px"; "></a></p>
+							<a href="japTags/kocosmetictags/cosmetic" id="button" class="button">More</a>
+						</section>
+					</div>
+				</div>
+			</div>
+			<!-- /Extra -->
+				
+			<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
+					<div class="6u">
+						<section>
+							<header>
+								<h2 style="color: #3CB371; font-weight: bold;">홈페이지 소개</h2>
+								<span class="byline">이제는 떠나요 <strong style="color:#BDECB6;"> 한국</strong>으로</span>
+							</header>
+							<p style="font-size: 20px; line-height: 30px;">2019년 9월부터 시작된 <strong style="color: #3CB371;">코로나 바이러스의 유행</strong>으로 인해서 전 세계의 국가들은 해외에서의 바이러스 유입을 차단을 위해 사증 면제 프로그램 및 관광 비자 발급을 중지합니다. 이로 인해서 해외여행 시장은 끝이 보이지 않는 빙하기를 맞이합니다.</p>
+							<p style="font-size: 20px; line-height: 30px;">하지만 코로나가 안정화가 되고 해외관광이 가능해지는 시점에서 폭발적인 수요가 발생할 것이며, 그 중에서도 한국 문화가 유행하고 있는 일본인 관광객을 대상으로 한국 관광 정보 및 트랜드를 제공하는 웹 서비스 제작을 목표로 하였습니다.</p>
+							<p style="font-size: 20px; line-height: 30px;">일본인 관광객의 목적과 관심사는 <strong style="color: #3CB371;"> 국가통계포털을 통해서 분석</strong>하였으며, 최신 트렌드의 경우 국가 통계와 일본 인터넷에서 한류 트랜드를 얻기에 한계가 있었으므로  <strong style="color: #3CB371;">인스타그램을 통해서 분석</strong>을 시도했습니다.</p>
+						</section>
+					</div>
+					<div class="3u">
+						<section class="sidebar">
+							<header>
+								<h2 style="font-size: 22px; font-weight: bold;">팀원소개</h2>
+							</header>
+							<ul class="style2">
+								<li>
+									<a href="#"><img src="{% static "images/pics07.jpg" %}" alt=""></a>
+									<p style="color: #3CB371; font-weight: bold; font-size: 17px;">조장</p>
+									<p>우성욱</p>
+								</li>
+								<li>
+									<a href="#"><img src="{% static "images/pics08.jpg" %}" alt=""></a>
+									<p style="color: #3CB371; font-weight: bold; font-size: 17px;">조원</p>
+									<p>박효정</p>
+								</li>
+								<li>
+									<a href="#"><img src="{% static "images/pics09.jpg" %}" alt=""></a>
+									<p style="color: #3CB371; font-weight: bold; font-size: 17px;">조원</p>
+									<p>장민선</p>
+								</li>
+								<li>
+									<a href="#"><img src="{% static "images/pics10.jpg" %}" alt=""></a>
+									<p style="color: #3CB371; font-weight: bold; font-size: 17px;">조원</p>
+									<p>주연서</p>
+								</li>
+							</ul>						
+						</section>
+					</div>
+					<div class="3u">
+						<section class="sidebar">
+							<header>
+								<h2 style="font-weight: bold;">데이터 보기</h2>
+							</header>
+							<ul class="style1">
+								<li><a href="#" style="color: #3CB371; font-weight: normal;">메인페이지</a></li>
+								<li><a href="#" style="color: #3CB371; font-weight: normal;">목적분석</a></li>
+								<li><a href="#" style="color: #3CB371; font-weight: normal;">지표분석</a></li>
+								<li><a href="#" style="color: #3CB371; font-weight: normal;">연관분석</a></li>
+							</ul>
+						</section>
+						<section class="sidebar">
+							<header>
+								<h2 style="font-weight: bold;"><a href="/main/japTags/">해시태그</a></h2>
+							</header>
+							<ul class="style1">
+								<li><a href="#" style="color: #3CB371; font-weight: normal;">카페</a></li>
+								<li><a href="#" style="color: #3CB371; font-weight: normal;">패션</a></li>
+								<li><a href="#" style="color: #3CB371; font-weight: normal;">화장품</a></li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</div>
+			<!-- Main -->
+
+		</div>
+	<!-- /Main -->
+	
+	<!-- Copyright -->
+		<div id="copyright" class="container">
+			3조: <strong style=" color: #666362;">방구석 한국여행 </strong><br><span><strong style=" color: #666362;">조원:</strong>우성욱 박효정 장민선 주연서</span>
+		</div>
+
+
+	</body>
+</html>

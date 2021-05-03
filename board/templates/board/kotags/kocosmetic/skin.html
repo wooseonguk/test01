@@ -1,0 +1,244 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>화장품 해시태그</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="{% static "js/skel.min.js" %}"></script>
+		<script src="{% static "js/skel-panels.min.js" %}"></script>	
+		<script src="{% static "js/init.js" %}"></script>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/style-desktop.css' %}" />
+		<script>
+		function copy_to_clipboard() {    
+			  var copyText = document.getElementById('myInput');
+			  copyText.select();
+			  copyText.setSelectionRange(0, 99999);
+			  document.execCommand("Copy");
+			  alert('복사되었습니다.');
+		}
+		</script>
+	<style> 
+		#now{
+			background-color:#3CB371;
+		}
+		#now a{
+			color:white;
+		}
+		a{	
+			color:black;	
+			text-decoration: none;
+			font-weight: bold;
+		}
+		h2{
+			color: #3CB371;
+			font-weight: bold;
+		}
+		#data_view{
+			background-color: #BDECB6;
+			border-radius: 10px;
+		}
+		#now{
+			background-color:#3CB371;
+		}
+		.c_table{
+			display: grid;
+			grid-template-columns: 200px 200px 500px;
+			grid-template-columns: 1fr;
+			row-gap: 20px;
+			column-gap: 20px;
+			border-radius:10px;
+		}
+		.table1{
+			text-align: center;
+			width: 85%;
+			margin: auto;
+		}
+		.box01{
+		    text-align: center;
+		}
+		.box01 input{
+		    border: none;
+		    font-size: 15px;
+		    outline: none;
+		    text-align: center;
+		    margin-top:10px;
+		    margin-bottom:10px;
+		}
+		.skin{
+			padding: 20px;
+			border: 1px solid;
+			border-radius: 20px;
+		}
+		h4{
+			font-weight: bold;
+			font-size: 20px;
+		}
+		p{
+			font-weight: normal;
+		}
+	</style>
+	</head>
+	<body class="left-sidebar">
+
+	<!-- Header -->
+		<div id="header">
+			<div class="container">
+					
+				<!-- Logo -->
+					<div id="logo">
+						<h1><a href="/main"><strong style="color: red;">방</strong>구석 <strong style="color: blue;">한</strong>국여행</a></h1>
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="/main/dataMain">데이터 보러가기</a></li>
+							<li id="data_view"><a href="/main/japTags" style="color: white;">해시태그</a></li>
+							<li><a href="/main/kotravel/tourinfo">관광정보</a></li>
+							<li><a href="/main/translator">번역기</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+	<!-- Header -->
+		
+	<!-- Banner -->
+		<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+	<!-- /Banner -->
+
+	<!-- Main -->
+		<div id="page">
+				
+			<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
+
+					<div class="3u" style="background-color: #BDECB6; padding:20px; width: 20%;">
+						<section class="sidebar">
+						<br>
+							<header>
+								<h2><a href="/main/japTags">#TAG</a></h2>
+							</header>
+							<ul class="style1">
+								<li><a href="/main/japTags/kocafe/cafeinfo">#韓國カフェ</a></li>
+								<li><a href="/main/japTags/kofashiontags/ftag1" title="#女性ファッション">＃韓国ファッション</a></li>
+								<li id="now"><a href="/main/japTags/kocosmetictags/cosmetic" title="#女性コーディおススメ" style="color: white;">#韓國コスメ</a></li>
+							</ul>
+						</section>
+					</div>
+				
+					<div class="9u skel-cell-important">
+						<section style="width: 102.5%">
+							<!-- kofashion 태그 메인 화면 겸  ** #여자코디 ** -->
+	
+	<h2 style="font-size: 30px;">#피부</h2><br>
+	<h2 style="font-size: 30px;">#皮膚属性</h2><br><br>
+	<table class="table1" border="1">
+		<tr>
+			<th>#TAG</th>
+			<td><a href="cosmetic">#한국화장품</a></td> 
+	        <td><a href="skincare">#스킨 케어</a></td>   
+	        <td><a href="makeup">#메이크업</a></td>   
+	        <td><a href="skin" style="color: white; border: 1px solid; border-radius: 10px; background-color:#BDECB6; padding: 10px;">#피부속성</a></td>
+		</tr>
+	</table>
+	<br>
+	<hr>
+	<p class="box01">
+		{% for i in cos15 %}		
+	        <input id="myInput" value="{{i.tags}}" onclick="copy_to_clipboard()" style="width:150px">       
+		{% endfor %}
+	</p>
+
+	<hr><br>
+	
+	<table style="vertical-align: middle; border: 1px solid; margin-left: 100px; margin: 20px;">
+	<br>
+		<span style="font-size: 40px; font-weight: bold; color: #666362">각 피부 및  특징</span><br><br><br>
+		<div class="skin">
+		<h4>건성피부</h4><br>
+		<p>- 건성피부 특징 : 유수분이 부족하고, 피부자극에 약함, 겨울, 가을이나 나이가 들면서 땀샘과 피지선의 활동이 활발하지 못해서 피부건조증에 많이 걸림.</p>
+		<p>- 건성피부 상태 : 환절기가 되면 각질이 생기고, 피부 결이 거칠고 윤기가 없음. 피부저항력이 약해 상처가 쉽게 아물지 않으며, 화장이 잘 받지 않는다.</p>
+		</div><br>
+		
+		<div class="skin">
+		<h4>중성피부</h4><br>
+		<p>- 중성피부 특징 : 피부밸런스 등 가장 이상적인 피부타입, 어떤 제품이라도 흡수가 잘되는 피부, 계절이나 환경, 건강상태, 연령 등에 따라 피부타입이 변하기도 한다.</p>
+		<p>- 중성피부 상태 : 가장 이상적인 피부, 피부가 부드럽고 매끄러우며 색소침착과 잡티나 여드름이 별로 없다. 잔주름 외 전반적인 주름살이 없고, 화장이 잘 받고 또한 잘 지워지지 않는다.</p>
+		</div><br>
+		
+		<div class="skin">
+		<h4>복합성피부</h4><br>
+		<p>- 복합성피부 특징 : 이마와 코-지성, 양쪽 뺨과 입 주변-건성, 모공이 크고 거친피부.</p>
+		<p>- 복합성피부 상태 : 얼굴 부위에 따라 상반되거나 전혀 다른 피부유형이 공존 하는 피부유형. 계절에 따라 피부트러블이 자주 생기고, 눈가의 잔주름과 볼 부분에 기미가 잘 생긴다.</p>
+		</div><br>
+		
+		<div class="skin">
+		<h4>지성피부</h4><br>
+		<p>- 지성피부 특징 : 과다피지분비, 넓은 모공, 칙칙한 피부, 수분부족, 주로 젊은 층에서 많이 나타나는 피부이다.</p>
+		<p>- 지성피부 상태 : 피지선기능이 비정상적으로 항진되며 피지과다분비, 화장이 잘 지워지고 자주 세안해도 번들거림, 피부색이 칙칙하고 어두우며, 여드름과 뾰루지가 잘생기고 모공이 넓다.</p>
+		</div><br>
+		
+		<div class="skin">
+		<h4>트러블피부</h4><br>
+		<p>- 트러블피부 특징 : 과다피지분비, 넓은 모공, 수분부족, 트러블 및 자국.</p>
+		<p>- 트러블피부 상태 : 피지선기능이 비정상적으로 항진되며 피지과다분비, 여드름과 뾰루지가 잘생기고 모공이 넓다</p>
+		</div><br>
+		
+		<div class="skin">
+		<h4>민감성피부</h4><br>
+		<p>- 민감성피부 특징 : 피부조직이 섬세하고 얇아서 약함, 붉으며 트러블이 잘 생김.</p>
+		<p>- 민감성피부 상태 : 작은 요인에 의해서도 트러블이 잘 생기고, 쉽게 붉어지며 약하다. 피부결이 섬세하여 깨끗해 보이지만 외부 자극에 대한 저항력이 약해 트러블, 붉어짐 등이 잘 생긴다.</p>
+		</div><br>
+		
+		<div class="skin">
+		<h4>노화피부</h4><br>
+		<p>- 노화피부 특징 : 멜라닌침착, 영양부족</p>
+		<p>- 노화피부 상태 : 기미, 잔주름, 굵은 주름, 피부재생속도가 느림, 멜라닌색소 침착진행, 유수분량의 부족</p>
+		</div><br>
+		
+		<div class="skin">
+		<h4>유아피부</h4><br>
+		<p>- 유아피부 특징 : 생후 1년부터 만6세까지의 어린아이 피부, 약하고 민감한 피부</p>
+		<p>- 유아피부 상태 : 주위환경 및 음식 등 내외부적인 작은 요인으로도 피부가 예민하게 반응</p>
+		</div><br>
+		
+		<div class="skin">
+		<h4>아토피피부</h4><br>
+		<p>- 아토피피부 특징 : 습진발생</p>
+		<p>- 아토피피부 상태 : 1차적으로 팔, 다리 등 공기와 접촉이 잘 안되는 접치는 부분에 습진발생 후 온몸으로 습진이 퍼짐, 집 먼지 등 작은 영향으로도 피부가 예민하게 반응</p>
+		</div>
+	</table>
+<br><br><hr><br><br>
+
+						</section>
+					</div>
+					
+				</div>
+			</div>
+			<!-- Main -->
+
+		</div>
+	<!-- /Main -->
+
+
+	<!-- footer -->
+		<div id="copyright" class="container">
+			3조: <strong style=" color: #666362;">방구석 한국여행 </strong><br><span><strong style=" color: #666362;">조원:</strong>우성욱 박효정 장민선 주연서</span>
+		</div>
+
+
+	</body>
+</html>

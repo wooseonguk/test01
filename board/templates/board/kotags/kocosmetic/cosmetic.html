@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>화장품 해시태그</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="{% static "js/skel.min.js" %}"></script>
+		<script src="{% static "js/skel-panels.min.js" %}"></script>	
+		<script src="{% static "js/init.js" %}"></script>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/style-desktop.css' %}" />
+		<script>
+		function copy_to_clipboard() {    
+			  var copyText = document.getElementById('myInput');
+			  copyText.select();
+			  copyText.setSelectionRange(0, 99999);
+			  document.execCommand("Copy");
+			  alert('복사되었습니다.');
+		}
+		</script>
+	<style> 
+		#now{
+			background-color:#3CB371;
+		}
+		#now a{
+			color:white;
+		}
+		a{	
+			color:black;	
+			text-decoration: none;
+			font-weight: bold;
+		}
+		h2{
+			color: #3CB371;
+			font-weight: bold;
+		}
+		#data_view{
+			background-color: #BDECB6;
+			border-radius: 10px;
+		}
+		#now{
+			background-color:#3CB371;
+		}
+		.c_table{
+			display: grid;
+			grid-template-columns: 200px 200px 500px;
+			grid-template-columns: 1fr 1fr;
+			row-gap: 20px;
+			column-gap: 20px;
+			border-radius:10px;
+		}
+		.table1{
+			text-align: center;
+			width: 85%;
+			margin: auto;
+		}
+		.box01{
+		    text-align: center;
+		}
+		.box01 input{
+		    border: none;
+		    font-size: 15px;
+		    outline: none;
+		    text-align: center;
+		    margin-top:10px;
+		    margin-bottom:10px;
+		    
+		}
+	</style>
+	</head>
+	body class="left-sidebar">
+
+	<!-- Header -->
+		<div id="header">
+			<div class="container">
+					
+				<!-- Logo -->
+					<div id="logo">
+						<h1><a href="/main"><strong style="color: red;">방</strong>구석 <strong style="color: blue;">한</strong>국여행</a></h1>
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="/main/dataMain">데이터 보러가기</a></li>
+							<li id="data_view"><a href="/main/japTags" style="color: white;">해시태그</a></li>
+							<li><a href="/main/kotravel/tourinfo">관광정보</a></li>
+							<li><a href="/main/translator">번역기</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+	<!-- Header -->
+		
+	<!-- Banner -->
+		<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+	<!-- /Banner -->
+
+	<!-- Main -->
+		<div id="page">
+				
+			<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
+
+					<div class="3u" style="background-color: #BDECB6; padding:20px; width: 20%;">
+						<section class="sidebar">
+						<br>
+							<header>
+								<h2><a href="/main/japTags">#TAG</a></h2>
+							</header>
+							<ul class="style1">
+								<li><a href="/main/japTags/kocafe/cafeinfo">#韓國カフェ</a></li>
+								<li><a href="/main/japTags/kofashiontags/ftag1" title="#女性ファッション">＃韓国ファッション</a></li>
+								<li id="now"><a href="/main/japTags/kocosmetictags/cosmetic" title="#女性コーディおススメ" style="color: white;">#韓國コスメ</a></li>
+							</ul>
+						</section>
+					</div>
+				
+					<div class="9u skel-cell-important">
+						<section style="width: 102.5%">
+							<!-- kofashion 태그 메인 화면 겸  ** #여자코디 ** -->
+	
+	<h2 style="font-size: 30px;">#한국화장품</h2><br>
+	<h2 style="font-size: 30px;">#韓國コスメ</h2><br><br>
+	<table class="table1" border="1">
+		<tr>
+			<th>#TAG</th>
+			<td><a href="cosmetic" style="color: white; border: 1px solid; border-radius: 10px; background-color:#BDECB6; padding: 10px;">#한국화장품</a></td>  
+	        <td><a href="skincare">#스킨 케어</a></td>   
+	        <td><a href="makeup">#메이크업</a></td>   
+	        <td><a href="skin">#피부속성</a></td>
+		</tr>
+	</table>
+	<br>
+	<hr>
+	<p class="box01">
+		{% for i in cos15 %}	
+	        <input id="myInput" value="{{i.tags}}" onclick="copy_to_clipboard()" style="width:150px">    
+		{% endfor %}
+	</p>
+	
+	<hr><br>	
+
+	<table style="vertical-align: middle; border: 1px solid; margin-left: 100px;">
+	<br>
+		<span style="font-size: 40px; font-weight: bold; color: #666362">올리브영 베스트 상품</span><br><br><br>
+		
+		
+		<div class="c_table">
+		{% for row in finds %}
+		<div align="center" style="border: 1px solid; padding: 20px; border-radius: 10px;">
+			<span><a href="{{row.url}}" style="font-size: 25px; color: #666362;"><img src="{{row.img}}" style="width: 300px; height: 300px;"></a></span><br><br>
+			<sapn style="vertical-align: middle"><a href="{{row.url}}" style="font-size: 25px; color: #666362;">{{row.title}}</a></sapn>		
+		</div>
+		{% endfor %}
+		</div>
+	</table><br><hr><br><br>
+	<div>
+	<span style="font-size: 20px; font-weight: bold; color: #666362">관련 사이트</span><br>
+      <a href="https://m.lalavla.com/service/main/main.html#gnb=2" ><img src="{% static "images/랄라블라 로고.jpg" %}" style="width: 550px; height: 300px;" alt="랄라블라"></a><br>
+      <a href="https://www.lotteon.com/p/display/shop/seltDpShop/12927?callType=menu" ><img src="{% static "images/롭스 로고.jpg" %}" style="width: 650px; height: 300px;" alt="롭스"></a><br><br>
+      </div>
+						</section>
+					</div>
+					
+				</div>
+			</div>
+			<!-- Main -->
+
+		</div>
+	<!-- /Main -->
+
+
+	<!-- footer -->
+		<div id="copyright" class="container">
+			3조: <strong style=" color: #666362;">방구석 한국여행 </strong><br><span><strong style=" color: #666362;">조원:</strong>우성욱 박효정 장민선 주연서</span>
+		</div>
+
+
+	</body>
+</html>

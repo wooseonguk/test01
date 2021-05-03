@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Ex Machina by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>데이터 보기</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="{% static "js/skel.min.js" %}"></script>
+		<script src="{% static "js/skel-panels.min.js" %}"></script>	
+		<script src="{% static "js/init.js" %}"></script>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/style-desktop.css' %}" />
+	<style>
+		#now{
+			background-color:#3CB371;
+		}
+		#now a{
+			color:white;
+		}
+		a{	
+			color:black;	
+
+			text-decoration: none;
+			font-weight: bold;
+		}
+		h2{
+			color: #3CB371;
+			font-weight: bold;
+		}
+		#data_view{
+			background-color: #BDECB6;
+			border-radius: 10px;
+		}
+	</style>
+	</head>
+	<body class="left-sidebar">
+
+	<!-- Header -->
+		<div id="header">
+			<div class="container">
+					
+				<!-- Logo -->
+					<div id="logo">
+						<h1><a href="/main"><strong style="color: red;">방</strong>구석 <strong style="color: blue;">한</strong>국여행</a></h1>
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li id="data_view"><a href="/main/dataMain" style="color: white;">데이터 보러가기</a></li>
+							<li><a href="/main/japTags">해시태그</a></li>
+							<li><a href="/main/kotravel/tourinfo">관광정보</a></li>
+							<li><a href="/main/translator">번역기</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+	<!-- Header -->
+		
+	<!-- Banner -->
+		<div id="banner">
+			<div class="container">
+			</div>
+		</div>
+	<!-- /Banner -->
+
+	<!-- Main -->
+		<div id="page">
+				
+			<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
+
+					<div class="3u" style="background-color: #BDECB6; padding:20px;">
+						<section class="sidebar">
+						<br>
+							<header>
+								<h2>목적분석</h2>
+							</header>
+						</section>
+						<section class="sidebar">
+							<header>
+								<h2><a href="purpose">목적분석</a></h2>
+							</header>
+							<ul class="style1">
+								<li><a href="board_2015">2015</a></li>
+								<li id="now"><a href="">2016</a></li>
+								<li><a href="board_2017">2017</a></li>
+								<li><a href="board_2018">2018</a></li>
+								<li><a href="board_2019">2019</a></li>
+							</ul>
+						</section>
+						<section class="sidebar">
+							<header>
+								<h2>연관분석</h2>
+							</header>
+							<ul class="style1">
+								<li><a href="board_cafe">카페 분석</a></li>
+								<li><a href="board_fashion">패션 분석</a></li>
+								<li><a href="board_cosmetic">화장품 분석</a></li>
+							</ul>
+						</section>
+					</div>
+				
+					<div class="9u skel-cell-important" >
+						<section>
+							<header>
+								<h2>지표분석 - 2016</h2><br>
+								<hr>
+							</header>
+							<img src="{% static 'images/board_2016.png' %}" width=890, height=650>
+							</div>
+					
+				</div>
+			</div>
+			<!-- Main -->
+
+		</div>
+	<!-- /Main -->
+
+	<!-- Copyright -->
+		<!-- footer -->
+		<div id="copyright" class="container">
+			3조: <strong style=" color: #666362;">방구석 한국여행 </strong><br><span><strong style=" color: #666362;">조원:</strong>우성욱 박효정 장민선 주연서</span>
+		</div>
+
+
+	</body>
+</html>

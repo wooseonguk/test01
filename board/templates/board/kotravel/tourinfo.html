@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+   Ex Machina by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+   <head>
+      <title>번역기</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta name="description" content="" />
+      <meta name="keywords" content="" />
+      <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+      <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="{% static "js/skel.min.js" %}"></script>
+      <script src="{% static "js/skel-panels.min.js" %}"></script>   
+      <script src="{% static "js/init.js" %}"></script>
+      <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/style-desktop.css' %}" />
+   </head>
+   <style>
+      .container1 {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin: 100px;
+         padding:50px;
+         
+      }
+      
+      .t_button {
+         margin-left: 100px;
+         margin-right: 100px;
+         margin-top: 20px;
+         font-weight: bold;
+      
+      }
+      
+      #data_view {
+         background-color: #BDECB6;
+         border-radius: 10px;
+      }
+      a{   
+         color:black;   
+         text-decoration: none;
+         font-weight: bold;
+      }
+      h2{
+         color: #3CB371;
+         font-weight: bold;
+      }
+</style>
+   <body class="no-sidebar">
+
+   <!-- Header -->
+      <div id="header">
+         <div class="container">
+               
+            <!-- Logo -->
+               <div id="logo">
+                  <h1><a href="/main"><strong style="color: red;">방</strong>구석 <strong style="color: blue;">한</strong>국여행</a></h1>
+               </div>
+            
+            <!-- Nav -->
+               <nav id="nav">
+                  <ul>
+                     <li><a href="/main/dataMain">데이터 보러가기</a></li>
+                     <li><a href="/main/japTags">해시태그</a></li>
+                     <li id="data_view"><a href="/main/kotravel/tourinfo"  style="color: white;">관광정보</a></li>
+                     <li><a href="/main/translator">번역기</a></li>
+                  </ul>
+               </nav>
+
+         </div>
+      </div>
+   <!-- Header -->
+      
+   <!-- Banner -->
+      <div id="banner">
+         <div class="container">
+         </div>
+      </div>
+   <!-- /Banner -->
+
+   <!-- Main -->
+   <div id="page">
+
+      <!-- Main -->
+      <div id="main" class="container" >
+         <div>
+         <h2 style="font-size: 30px;">관광정보</h2><br><br><br><br>
+            <div class="12u">
+               <table border=1 width=100% style="vertical-align: middle; border: 1px solid;">
+                  <tr align="center" height=70px style="font-size:18px; border: 1px solid;">
+                     <th style="font-weight: bold; vertical-align:middle; border: 1px solid;" width=20%>사진</th>
+                     <th style="font-weight: bold; vertical-align:middle; border: 1px solid;" width=15%>관광지명<br>(홈페이지)</th>
+                     <!--<th width=2%>홈페이지</th>-->
+                     <th style="font-weight: bold; vertical-align:middle; border: 1px solid;" width=25%>교통편</th>
+                     <th style="font-weight: bold; vertical-align:middle; border: 1px solid;" width=40%>소개</th>
+                  </tr>
+                  {% for row in finds %}
+                  <tr align="center" height=350px style="vertical-align: middle; border: 1px solid;">
+                     <td style="border: 1px solid;  vertical-align: middle;"><img src="{{row.picture}}" style=" width: 350px; height: 230px; padding: 20px;"></td>
+                     <td style="border: 1px solid; vertical-align: middle; padding: 20px;"><a href="{{row.homepage}}">{{row.title}}</a></td>
+                     <!--<td style="vertical-align: top; padding: 20px;">{{row.homepage}}</td>-->
+                     <td style="border: 1px solid; vertical-align: middle; padding: 20px;">{{row.trfcinfo}}</td>
+                     <td style="border: 1px solid; vertical-align: middle; padding: 20px;">{{row.content}}</td>
+                  </tr>
+                  {% endfor %}
+
+               </table>
+            </div>
+
+         </div>
+      </div>
+      <!-- Main -->
+
+   </div>
+   <!-- /Main -->
+
+
+   <!-- footer -->
+		<div id="copyright" class="container">
+			3조: <strong style=" color: #666362;">방구석 한국여행 </strong><br><span><strong style=" color: #666362;">조원:</strong>우성욱 박효정 장민선 주연서</span>
+		</div>
+
+
+   </body>
+</html>
